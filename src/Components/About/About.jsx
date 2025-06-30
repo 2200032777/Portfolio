@@ -5,7 +5,7 @@ import profile_img from '../../assets/about_profile1.jpg';
 import theme_pattern from '../../assets/theme_pattern.svg';
 
 // Import logo images
-import python_logo from '../../assets/python.png';
+import python_logo from '../../assets/Python.png';
 import cpp_logo from '../../assets/c++.png';
 import js_logo from '../../assets/javascript.png';
 import react_logo from '../../assets/react1.png';
