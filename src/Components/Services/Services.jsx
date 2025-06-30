@@ -1,5 +1,5 @@
 import React from 'react';
-import './Services.css';
+import './services.css';
 import arrow_icon from '../../assets/arrow_icon.svg';
 
 const capabilities = [
