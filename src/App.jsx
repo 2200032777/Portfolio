@@ -7,21 +7,24 @@ import MyWork from './Components/MyWork/MyWork';
 import Certifications from './Components/Certifications/Certifications';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
-import { useScrollSpy } from './hooks/useScrollSpy'; // Import the hook
+import Welcome from './Components/Welcome/Welcome'; // Corrected path to lowercase 'c'
+import { useScrollSpy } from './hooks/useScrollSpy'; 
 
 const App = () => {
   // Define the IDs of your sections in the order they appear
   const sectionIds = ['home', 'about', 'services', 'work', 'certifications', 'contact'];
   
   // Use the hook to get the ID of the currently active section
-  // The options mean a section is "active" when it's 50% visible
   const activeSection = useScrollSpy(sectionIds, { threshold: 0.5 });
 
   return (
     <div>
+      <Welcome /> {/* <-- PLACE IT HERE */}
+
       {/* Pass the dynamic activeSection ID to the Navbar */}
       <Navbar activeSection={activeSection} />
 
+      {/* The rest of your portfolio sections */}
       <div id='home'><Hero /></div>
       <div id='about'><About /></div>
       <div id='services'><Services /></div>
