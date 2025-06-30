@@ -1,9 +1,5 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navbar';
-// App.js or your main layout component
-
-// App.js (Updated)
-
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Services from './components/Services/Services';
