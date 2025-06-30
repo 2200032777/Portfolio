@@ -6,7 +6,7 @@ import theme_pattern from '../../assets/theme_pattern.svg';
 
 // Import logo images
 import python_logo from '../../assets/Python.png';
-import cpp_logo from '../../assets/c++.png';
+import cpp_logo from '../../assets/C++.png';
 import js_logo from '../../assets/javascript.png';
 import react_logo from '../../assets/react1.png';
 import java_logo from '../../assets/java.png';
