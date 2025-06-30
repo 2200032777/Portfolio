@@ -3,7 +3,7 @@ import "./Certifications.css";
 
 import aws_cert from "../../assets/aws.png";
 import redhat_cert from "../../assets/redhat.png";
-import salesforce_cert from "../../assets/salesforce.png";
+import salesforce_cert from "../../assets/Salesforce.png";
 import automation_cert from "../../assets/rpa1.png";
 
 const certifications = [
