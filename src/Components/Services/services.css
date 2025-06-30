@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #3b82f6;   /* Tailwind blue-500 */
+  --accent-color: #9333ea;    /* Tailwind purple-600 */
+  --bg-color: #0d1117;        /* Your requested dark background */
+  --card-bg: #161b22;         /* Slightly lighter than bg */
+  --text-color: #e2e8f0;      /* Light text */
+  --font-primary: 'Inter', sans-serif;
+}
+
+.services {
+  padding: 100px 8%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.services-title h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.services-title h1::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 80px;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+  border-color: var(--primary-color);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.service-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--primary-color);
+  gap: 6px;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.service-link:hover {
+  color: var(--accent-color);
+}
+
+.service-link img {
+  width: 18px;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover img {
+  transform: translateX(4px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 5%;
+  }
+  .services-title h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 40px 4%;
+  }
+  .services-title h1 {
+    font-size: 1.8rem;
+  }
+}

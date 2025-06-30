@@ -1,0 +1,126 @@
+.certifications {
+  background: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.03) 0%, rgba(8, 13, 26, 1) 45%),
+              linear-gradient(180deg, #080D1A 0%, #0F172A 100%);
+  color: #e0e0e0;
+  font-family: 'Orbitron', 'Fira Code', monospace;
+  padding: 80px 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.015) 1px, transparent 1px),
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.01) 1px, transparent 1.5px),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.01) 1px, transparent 1.5px);
+  background-size: 80px 80px, 80px 80px, 100px 100px, 120px 120px;
+  background-position: 0 0, 0 0, 0 0, 60px 60px;
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+  animation: background-subtle-flow 60s linear infinite;
+  mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+}
+
+@keyframes background-subtle-flow {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 60px 60px;
+  }
+  100% {
+    background-position: 100% 100%, 100% 100%, 100% 100%, 160px 160px;
+  }
+}
+
+.cert-title {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.cert-title h1 {
+  font-size: 3rem;
+  color: #00bfff;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.7), 0 0 20px rgba(0, 191, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+.cert-title img {
+  max-width: 120px;
+  margin-top: 8px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.cert-card {
+  background: #1a1a1a;
+  border: 2px solid #00bfff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+}
+
+.cert-card img.cert-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.cert-card h2 {
+  font-size: 1.2rem;
+  color: #00bfff;
+  margin: 10px 0 5px;
+  position: relative;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.cert-card h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00bfff, #a855f7);
+  box-shadow: 0 0 4px #00bfff;
+  border-radius: 1px;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.cert-card a {
+  font-size: 0.9rem;
+  color: #ff66cc;
+  text-decoration: underline dotted;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cert-card a:hover {
+  color: #ff99e6;
+}

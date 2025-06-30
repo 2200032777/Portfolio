@@ -1,0 +1,273 @@
+:root {
+  --neon-blue: #00bfff;
+  --neon-pink: #ff66cc;
+  --bg-dark: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --text-light: #e0e0e0;
+  --font-primary: 'Orbitron', 'Fira Code', monospace;
+}
+
+.mywork {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  padding: 80px 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mywork-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mywork-title h1 {
+  font-size: 3.5rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.7), 0 0 20px rgba(0, 191, 255, 0.4);
+  position: relative;
+}
+
+.mywork-title h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; left: 50%;
+  width: 80px; height: 4px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.mywork-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 2px solid var(--neon-blue);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(var(--neon-pink) 1px, transparent 50%);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.6s ease-out;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 30px rgba(255, 102, 204, 0.6);
+}
+
+.project-card:hover::before {
+  opacity: 0.1;
+  transform: scale(1);
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-content h2 {
+  font-size: 1.6rem;
+  margin: 12px 0;
+  color: var(--neon-pink);
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.project-tags {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--neon-blue);
+  font-size: 0.85rem;
+  border: 1px solid var(--neon-blue);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.network-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+  animation: flicker 2s infinite;
+  z-index: 0;
+}
+
+/* Example positions (could be randomized via JS) */
+.line-0-1 { top: 250px; left: 20%; height: 120px; }
+.line-1-2 { top: 400px; left: 40%; height: 100px; }
+.line-2-3 { top: 550px; left: 60%; height: 140px; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.6; }
+}
+
+.project-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.project-detail-card {
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 720px;
+  width: 95%;
+  box-shadow: 0 0 25px rgba(255, 102, 204, 0.7);
+  color: var(--text-light);
+  position: relative;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(50px); opacity: 0; }
+}
+
+.project-detail-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.project-detail-meta {
+  margin-top: 15px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: var(--neon-blue);
+  text-decoration: none;
+  margin-top: 12px;
+  transition: color 0.3s ease;
+}
+
+.project-link img {
+  width: 18px;
+  margin-left: 6px;
+  filter: drop-shadow(0 0 4px rgba(0, 191, 255, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+  color: var(--neon-pink);
+}
+
+.project-link:hover img {
+  transform: translateX(4px);
+}
+
+.close-button {
+  position: absolute;
+  top: 14px; right: 20px;
+  font-size: 2rem;
+  color: var(--neon-pink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ff99e6;
+  transform: rotate(90deg);
+}
+
+.mywork-showmore {
+  margin: 60px auto 0;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: var(--neon-blue);
+  border: 2px solid var(--neon-blue);
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mywork-showmore img {
+  width: 20px;
+  filter: drop-shadow(0 0 4px rgba(0, 191, 255, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.mywork-showmore:hover {
+  background-color: var(--neon-blue);
+  color: var(--bg-dark);
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.mywork-showmore:hover img {
+  transform: translateX(5px);
+}
+.mywork {
+  background: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.03) 0%, rgba(8, 13, 26, 1) 45%),
+              linear-gradient(180deg, #080D1A 0%, #0F172A 100%);
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  padding: 80px 5%;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Background grid/glow layer */
+.mywork::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.015) 1px, transparent 1px),
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.01) 1px, transparent 1.5px),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.01) 1px, transparent 1.5px);
+  background-size: 80px 80px, 80px 80px, 100px 100px, 120px 120px;
+  background-position: 0 0, 0 0, 0 0, 60px 60px;
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+  animation: background-subtle-flow 60s linear infinite;
+  mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+}
+
+@keyframes background-subtle-flow {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 60px 60px;
+  }
+  100% {
+    background-position: 100% 100%, 100% 100%, 100% 100%, 160px 160px;
+  }
+}

@@ -1,0 +1,259 @@
+:root {
+  --neon-blue: #38BDF8;
+  --neon-violet: #A855F7;
+  --bg-contact: #0F172A;
+  --glass-dark: rgba(30, 41, 59, 0.92);
+  --glass-blur: blur(12px);
+  --font-primary: 'Fira Code', 'Orbitron', monospace;
+  --text-light: #F1F5F9;
+  --text-dim: #CBD5E1;
+  --input-bg: #1E293B;
+}
+
+/* === CONTACT SECTION ROOT === */
+.contact {
+  padding: 90px 8%;
+  background-color: var(--bg-contact);
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === SECTION TITLE === */
+.contact-title {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-title h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  text-shadow: 0 0 14px var(--neon-blue), 0 0 24px var(--neon-blue);
+  animation: flicker-glow 3s infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes flicker-glow {
+  0%, 100% { text-shadow: 0 0 14px var(--neon-blue); }
+  50% { text-shadow: 0 0 20px #7DD3FC, 0 0 30px var(--neon-blue); }
+}
+
+.contact-title img {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  opacity: 0.3;
+  animation: spinPattern 40s linear infinite;
+}
+
+@keyframes spinPattern {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* === GRID WRAPPER === */
+.contact-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  width: 100%;
+  max-width: 1300px;
+  z-index: 1;
+}
+
+/* === LEFT PANEL === */
+.contact-left {
+  background: var(--glass-dark);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-left h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+}
+
+.contact-left p {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* === CONTACT DETAILS === */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #94A3B8;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: color 0.3s ease;
+}
+
+.contact-detail img {
+  width: 20px;
+}
+
+.contact-detail p {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.contact-detail p:hover {
+  color: var(--neon-blue);
+}
+
+/* === RIGHT PANEL === */
+.contact-right {
+  background: var(--glass-dark);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-right label {
+  font-size: 1rem;
+  color: #D8D8D8;
+  font-weight: 600;
+}
+
+/* === INPUT FIELDS === */
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+  background: var(--input-bg);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  color: #A0A0A0;
+  font-family: var(--font-primary);
+  resize: none;
+  transition: 0.3s;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  outline: none;
+  background-color: #1e2f48;
+  box-shadow: 0 0 0 2px var(--neon-blue);
+}
+
+/* === SUBMIT BUTTON === */
+.contact-submit {
+  background: linear-gradient(to right, var(--neon-violet), var(--neon-blue));
+  padding: 2px;
+  border-radius: 999px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: flex-start;
+}
+
+.contact-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+.contact-submit span {
+  display: block;
+  background-color: var(--bg-contact);
+  color: var(--neon-blue);
+  padding: 12px 32px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 70px 6%;
+  }
+
+  .contact-title h1 {
+    font-size: 2.8rem;
+  }
+
+  .contact-title img {
+    width: 60px;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .contact-title h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-left p,
+  .contact-detail,
+  .contact-right label,
+  .contact-right input,
+  .contact-right textarea,
+  .contact-submit span {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 40px 4%;
+    gap: 32px;
+  }
+
+  .contact-title h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.contact {
+  padding: 90px 8%;
+  background-color: var(--bg-contact);  /* Simple background color */
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
