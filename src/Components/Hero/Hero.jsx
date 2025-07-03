@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import profileImg from '../../assets/about_profile.jpg';
+import profileImg from '../../assets/pic o.avif';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 // Assuming CanvasScene is a component you have for the background
 // import CanvasScene from './CanvasScene'; // Uncomment if you have this component
